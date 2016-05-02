@@ -1,0 +1,12 @@
+﻿<Placement>
+  <Place Fields_ContentRelation_Edit="Content:2.3"/>
+
+  <Match DisplayType="Detail">
+    <Place Fields_ContentRelation="Content:after"/>
+  </Match>
+
+  <!--<Match DisplayType="SummaryAdmin">
+    <Place Fields_ContentRelation_SummaryAdmin="Content:after"/>
+  </Match>-->
+
+</Placement>

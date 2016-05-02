@@ -1,0 +1,17 @@
+﻿@using System.Linq
+@using Orchard.ContentManagement;
+@using Orchard.ContentManagement.Aspects;
+@using MainBit.ContentRelations.Models;
+@{
+    var contentRelations = (List<ContentRelationRecord>)Model.ContentRelations;
+    var currentValue = Model.Value == null ? 0 : (int)Model.Value;
+    var options = contentRelations.Select(x => new SelectListItem
+    {
+        Text = x.Title, //x.As<ITitleAspect>().Title,
+        Value = x.Id.ToString(),
+        Selected = x.Id == currentValue 
+    });
+    var name = Model.Name != null ? Model.Name as string : "ContentRelationRecord_Id";
+    
+}
+@Html.DropDownList(name, options, T("Select an option").ToString())

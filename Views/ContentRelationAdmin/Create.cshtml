@@ -1,0 +1,13 @@
+﻿@model MainBit.ContentRelations.Models.ContentRelationRecord
+<h1>@Html.TitleForPage(T("Create new contentRelation group").ToString())</h1>
+@using (Html.BeginFormAntiForgeryPost())
+{
+    @Html.ValidationSummary()
+    <fieldset>
+        <label for="@Html.IdFor(m => m.Title)">@T("Title")</label>
+        @Html.TextBoxFor(m => m.Title, new { @class = "text medium" })
+        <span class="hint">@T("Title")</span>
+    </fieldset>
+    <button class="primaryAction" type="submit" name="submit.Save" value="submit.Save">@T("Save")</button>
+    <a href="@Url.Action("Index")" class="button">@T("Cancel")</a>
+}

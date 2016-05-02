@@ -1,0 +1,22 @@
+﻿@model MainBit.ContentRelations.ViewModels.ContentRelationFieldViewModel
+@using Orchard.Utility.Extensions;
+@using MainBit.ContentRelations.Settings;
+
+@{
+    Script.Require("ContentPicker").AtFoot();
+    Script.Require("jQueryUI_Sortable").AtFoot();
+    Style.Include("content-picker-admin.css");
+
+    ContentRelationFieldSettings settings = Model.Field.PartFieldDefinition.Settings.GetModel<ContentRelationFieldSettings>();
+}
+@Display.ContentPicker_Edit(
+    Required: settings.Required,
+    Multiple: settings.Multiple,
+    DisplayName: Model.Field.DisplayName,
+    IdsFieldId: "test-work-without-it", //Html.FieldIdFor(m => m.Field.Ids),
+    SelectedItemsFieldName: Html.FieldNameFor(m => m.SelectedIds),
+    ContentItems: Model.ContentItems,
+    Hint: settings.Hint,
+    PartName: Model.Part.PartDefinition.Name,
+    FieldName: Model.Field.PartFieldDefinition.Name
+)

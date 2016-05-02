@@ -1,0 +1,28 @@
+﻿@model List<MainBit.ContentRelations.Models.ContentRelationRecord>
+    <h1>@Html.TitleForPage(T("ContentRelation Groups").ToString())</h1>
+    @ViewBag.EmptyMessage
+    @if (Model != null && Model.Count > 0)
+{
+    <table class="items">
+        <thead>
+            <tr>
+                <th>@T("Id")</th>
+                <th>@T("Title")</th>
+                <th>@T("Actions")</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Title</td>
+                <td>
+                    <a href="@Url.Action("Edit", "ContentRelationAdmin", new { contentRelationId = item.Id })">@T("Edit")</a> | <a href="@Url.Action("Delete", "ContentRelationAdmin", new { contentRelationId = item.Id })">@T("Remove")</a>
+                </td>
+            </tr>
+        }
+</table>
+}
+<fieldset>
+    @Html.ActionLink(T("Create").ToString(), "Create", new { }, new { @class = "button" })
+</fieldset>

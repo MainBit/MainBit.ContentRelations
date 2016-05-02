@@ -1,0 +1,12 @@
+﻿Name: MainBit.ContentRelations
+AntiForgery: enabled
+Author: MainBit Inc.
+Website: http://mainbit.com
+Version: 1
+OrchardVersion: 1.10
+Description: Description for the module
+Features:
+    MainBit.ContentRelations:
+        Description: Provide the relation content field that allow to establish the contentRelation beetween content items by content picker.
+		Dependencies: Orchard.ContentPicker
+		Category: Input Editor
