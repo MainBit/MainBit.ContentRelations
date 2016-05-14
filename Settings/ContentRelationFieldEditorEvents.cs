@@ -26,7 +26,7 @@ namespace MainBit.ContentRelations.Settings
             }
 
             var model = new ContentRelationFieldSettings();
-            if (updateModel.TryUpdateModel(model, "RelationshipFieldSettings", null, null))
+            if (updateModel.TryUpdateModel(model, "ContentRelationFieldSettings", null, null))
             {
                 builder.WithSetting("ContentRelationFieldSettings.Hint", model.Hint);
                 builder.WithSetting("ContentRelationFieldSettings.Required", model.Required.ToString(CultureInfo.InvariantCulture));
